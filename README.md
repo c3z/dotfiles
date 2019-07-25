@@ -45,13 +45,15 @@ this script in `bin/`.
 ### manjaro
 
 ```sh
-pacman -Syu
-pacman -S yay
+sudo pacman -Syu
+sudo pacman -S yay
 yay zsh
 
 cd ~/.dotfiles/
 script/install
-nvm install 12.8.0
+script/bootstrap
+zsh
+nvm install 12.7.0
 script/install
 
 ```
