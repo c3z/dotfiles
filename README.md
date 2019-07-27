@@ -1,4 +1,4 @@
-# holman does dotfiles
+# c3z dotfiles
 
 ## components
 
@@ -54,7 +54,7 @@ script/install
 script/bootstrap
 zsh
 nvm install 12.7.0
-rbenv install 2.0.0-p247
+rbenv install 2.6.3
 script/install
 
 ```
