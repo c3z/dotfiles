@@ -58,3 +58,20 @@ rbenv install 2.6.3
 script/install
 
 ```
+
+
+### ubuntu
+
+```sh
+apt-get update
+apt install -y zsh gcc make  libssl-dev libreadline-dev zlib1g-dev
+cd ~/.dotfiles/
+script/install
+unset NVM_DIR
+script/bootstrap
+zsh
+nvm install 12.7.0
+rbenv install 2.6.3
+script/install
+
+```
