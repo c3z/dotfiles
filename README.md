@@ -64,7 +64,7 @@ script/install
 
 ```sh
 apt-get update
-apt install -y zsh gcc make  libssl-dev libreadline-dev zlib1g-dev
+apt install -y zsh gcc make  libssl-dev libreadline-dev zlib1g-dev g++
 cd ~/.dotfiles/
 script/install
 unset NVM_DIR
