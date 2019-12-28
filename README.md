@@ -63,15 +63,15 @@ script/install
 ### ubuntu
 
 ```sh
-apt-get update
-apt install -y zsh gcc make  libssl-dev libreadline-dev zlib1g-dev g++
+sudo apt-get update -y
+sudo apt install -y zsh gcc make  libssl-dev libreadline-dev curl git zlib1g-dev g++ 
 cd ~/.dotfiles/
 script/install
 unset NVM_DIR
 script/bootstrap
 zsh
-nvm install 12.7.0
-rbenv install 2.6.3
+nvm install 13.5.0
+rbenv install 2.7.0
 script/install
 
 ```
