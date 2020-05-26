@@ -68,11 +68,12 @@ sudo apt install -y zsh gcc make  libssl-dev libreadline-dev curl git zlib1g-dev
 cd ~/.dotfiles/
 script/install
 unset NVM_DIR
+script/install
 script/bootstrap
 zsh
-nvm install 13.5.0
-rbenv install 2.7.0
-rbenv global 2.7.0
+nvm install 13.12.0
+rbenv install 2.7.1
+rbenv global 2.7.1
 script/install
 
 ```
