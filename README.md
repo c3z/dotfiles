@@ -23,7 +23,6 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-
 git clone git@github.com:c3z/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
@@ -42,38 +41,37 @@ this script in `bin/`.
 
 ## fresh install on new machine
 
-### manjaro
-
-```sh
-sudo pacman -Syu
-sudo pacman -S yay
-yay zsh
-
-cd ~/.dotfiles/
-script/install
-script/bootstrap
-zsh
-nvm install 12.7.0
-rbenv install 2.6.3
-script/install
-
-```
-
-
 ### ubuntu
 
 ```sh
 sudo apt-get update -y
-sudo apt install -y zsh gcc make  libssl-dev libreadline-dev curl git zlib1g-dev g++ 
+sudo apt install -y zsh gcc make  libssl-dev libreadline-dev curl git zlib1g-dev g++
 cd ~/.dotfiles/
 script/install
 unset NVM_DIR
 script/install
 script/bootstrap
 zsh
-nvm install 13.12.0
-rbenv install 2.7.1
-rbenv global 2.7.1
+nvm install 14.15.3
+rbenv install 3.0.0
+rbenv global 3.3.0
+script/install
+
+```
+
+### macosx m1
+
+```sh
+git --version
+cd ~/.dotfiles/
+script/install
+unset NVM_DIR
+script/install
+script/bootstrap
+zsh
+nvm install 14.15.3
+rbenv install 3.0.0
+rbenv global 3.3.0
 script/install
 
 ```
