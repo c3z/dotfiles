@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'puma/puma'
+tap 'hashicorp/tap'
 
 brew 'ack'
 brew 'coreutils'
@@ -19,6 +20,8 @@ brew 'roundup'
 brew 'spaceman-diff'
 brew 'wget'
 brew 'youtube-dl'
+brew 'hashicorp/tap/terraform'
+brew 'terragrunt'
 
 cask '1password'
 cask 'adium'
