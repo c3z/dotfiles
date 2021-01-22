@@ -20,6 +20,7 @@ brew 'spaceman-diff'
 brew 'wget'
 brew 'youtube-dl'
 
+cask 'discord'
 cask '1password'
 cask 'adium'
 cask 'firefox'
