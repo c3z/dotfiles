@@ -51,6 +51,7 @@ cask "vlc"
 cask "rar"
 cask "wasabi-wallet"
 cask "xmind-zen"
+cask "xnviewmp"
 cask "font-inconsolata"
 cask "font-fira-sans"
 
