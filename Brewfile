@@ -32,6 +32,7 @@ brew "puma/puma/puma-dev"
 
 cask "alfred"
 cask "1password"
+cask "cyberduck"
 cask "discord"
 cask "firefox"
 cask "handbrake"
