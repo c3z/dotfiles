@@ -30,7 +30,7 @@ brew "wget"
 brew "youtube-dl"
 brew "puma/puma/puma-dev"
 
-cask "alfred"
+cask "adobe-acrobat-reader"
 cask "1password"
 cask "cyberduck"
 cask "discord"
