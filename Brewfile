@@ -58,4 +58,6 @@ cask "xmind-zen"
 cask "xnviewmp"
 cask "font-inconsolata"
 cask "font-fira-sans"
+cask "disk-inventory-x"
+
 
