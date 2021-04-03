@@ -31,6 +31,7 @@ brew "youtube-dl"
 brew "puma/puma/puma-dev"
 
 cask "adobe-acrobat-reader"
+cask "anydesk"
 cask "1password"
 cask "cyberduck"
 cask "discord"
