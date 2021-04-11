@@ -28,6 +28,7 @@ brew "terragrunt"
 brew "tarsnap"
 brew "wget"
 brew "youtube-dl"
+brew "vips"
 brew "puma/puma/puma-dev"
 
 cask "adobe-acrobat-reader"
