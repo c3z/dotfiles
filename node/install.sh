@@ -1,7 +1,7 @@
 if test ! $(command -v nvm)
 then
   echo "no nvm found, installing"
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 else
   echo "nvm found"
 fi
