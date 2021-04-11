@@ -55,3 +55,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/opt/homebrew/bin:./bin:/usr/local/bin:/usr/local/sbin:/Users/c3z/.dotfiles/bin:/Users/c3z/.rbenv/shims:/Users/c3z/.deno/bin:/Users/c3z/.rbenv/bin:/home/linuxbrew/.linuxbrew/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/c3z/.rvm/bin
