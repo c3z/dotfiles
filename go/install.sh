@@ -4,5 +4,5 @@ if test ! "$(uname)" = "Darwin"
 then
   sudo apt install -y golang
 else
-  arch -x86_64 brew install golang
+  brew install golang
 fi
