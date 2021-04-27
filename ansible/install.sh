@@ -8,5 +8,5 @@ then
   sudo apt install ansible --yes
 else
   echo "> installing ansible"
-  arch -x86_64 brew install ansible
+  brew install ansible
 fi
