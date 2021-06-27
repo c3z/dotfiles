@@ -75,3 +75,6 @@ rbenv global 3.3.0
 script/install
 
 ```
+## TODO
+
+[ ] add full install from here: https://towardsdatascience.com/new-m1-who-dis-677e085baffd
