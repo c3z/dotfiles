@@ -9,6 +9,7 @@ tap "puma/puma"
 tap "homebrew/cask-fonts"
 
 brew "ack"
+brew "anki"
 brew "ansible"
 brew "coreutils"
 brew "emacs"
