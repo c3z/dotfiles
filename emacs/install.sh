@@ -13,4 +13,7 @@ ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
 echo "› Installing doom emacs"
 
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+cd ~/.emacs.d
+git checkout develop
+cd
 ~/.emacs.d/bin/doom install
