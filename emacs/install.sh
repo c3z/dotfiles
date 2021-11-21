@@ -4,6 +4,12 @@ if test ! "$(uname)" = "Darwin"
   exit 0
 fi
 
+if [ -d "$HOME/.emacs.d" ]
+  then
+  echo ".emacs.d folder found EXITING"
+  exit 0
+fi
+
 echo "› brew install emacs-mac --with-modules"
 brew install emacs-mac --with-modules
 
@@ -16,4 +22,7 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 cd ~/.emacs.d
 git checkout develop
 cd
-~/.emacs.d/bin/doom install
+
+echo "-------*************************************** MANUAL SCRIPT TO BE INVOKED LATER"
+echo "|> after script is done invoke '~/.emacs.d/bin/doom install' to boostrap spacemacs instalation"
+echo "-------"
