@@ -1,13 +1,11 @@
-#!/bin/sh
+# install ruby with rbenv
 
-if test ! $(which rbenv)
+if test ! "$(uname)" = "Darwin"
 then
-  echo "  Installing rbenv for you."
-  brew install rbenv > /tmp/rbenv-install.log
-fi
-
-if test ! $(which ruby-build)
-then
-  echo "  Installing ruby-build for you."
-  brew install ruby-build > /tmp/ruby-build-install.log
+  echo "> installing rbenv using curl scripts"
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+else
+  echo "> installing rbenv using brew"
+  arch -x86_64 brew install rbenv
 fi
