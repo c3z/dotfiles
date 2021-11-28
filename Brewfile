@@ -11,6 +11,7 @@ tap "railwaycat/emacsmacport"
 
 brew "ack"
 brew "anki"
+brew "albert"
 brew "ansible"
 brew "docker"
 brew "deno"
