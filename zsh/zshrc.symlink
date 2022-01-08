@@ -84,6 +84,8 @@ function zshaddhistory() {
 	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
 }
 
+source /Users/c3z/.cargo/env
+
 echo_color "c-f  Move forward"
 echo_color "c-b  Move backward"
 echo_color "c-p  Move up"
