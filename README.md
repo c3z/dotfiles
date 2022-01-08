@@ -78,3 +78,17 @@ script/install
 ## TODO
 
 [ ] add full install from here: https://towardsdatascience.com/new-m1-who-dis-677e085baffd
+[ ] add new tools
+
+bat instead of cat
+diff-so-fancy
+fx
+fzf
+exa
+duff
+htop
+hexyl
+fig
+curlx
+grv
+
