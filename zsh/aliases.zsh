@@ -7,3 +7,5 @@ function echo_color() {
 }
 
 alias gosleep='pmset sleepnow'
+
+alias ws='open -na "WebStorm.app" --args "$@"'
