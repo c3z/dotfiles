@@ -86,13 +86,4 @@ function zshaddhistory() {
 
 source /Users/c3z/.cargo/env
 
-echo_color "c-f  Move forward"
-echo_color "c-b  Move backward"
-echo_color "c-p  Move up"
-echo_color "c-n  Move down"
-echo_color "c-a  Jump to beginning of line"
-echo_color "c-e  Jump to end of line"
-echo_color "c-d  Delete forward"
-echo_color "c-h  Delete backward"
-echo_color "c-k  Delete forward to end of line"
-echo_color "c-u  Delete entire line"
+nvm use stable
