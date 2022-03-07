@@ -56,3 +56,6 @@ function zshaddhistory() {
 }
 
 nvm use default
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
