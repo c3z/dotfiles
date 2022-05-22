@@ -56,7 +56,7 @@ brew "thefuck"
 brew "vips"
 brew "vifm"
 brew "wget"
-brew "youtube-dl"
+brew "yt-dlp/taps/yt-dlp"
 
 cask "adobe-acrobat-reader"
 cask "android-sdk"
