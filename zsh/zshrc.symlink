@@ -49,8 +49,6 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-export PATH=/opt/homebrew/bin:./bin:/usr/local/bin:/usr/local/sbin:/Users/c3z/.dotfiles/bin:/Users/c3z/.rbenv/shims:/Users/c3z/.deno/bin:/Users/c3z/.rbenv/bin:/home/linuxbrew/.linuxbrew/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/c3z/.rvm/bin
-
 function zshaddhistory() {
 	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
 }
