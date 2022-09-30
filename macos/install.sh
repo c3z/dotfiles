@@ -1,4 +1,3 @@
-
 if test ! "$(uname)" = "Darwin"
   then
   exit 0
@@ -11,3 +10,9 @@ fi
 
 echo "› sudo softwareupdate -i -a"
 sudo softwareupdate -i -a
+
+if [ $(/usr/bin/pgrep oahd >/dev/null 2>&1;echo $?) -ne 0 ] 
+then 
+  echo "› sudo softwareupdate --install-rosetta"
+  sudo softwareupdate --install-rosetta
+fi
