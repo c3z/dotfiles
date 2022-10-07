@@ -17,7 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change right_command+hjkl to arrow keys222222",
+                        "description": "Change right_command+hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
