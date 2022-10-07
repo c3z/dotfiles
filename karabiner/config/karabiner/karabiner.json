@@ -376,6 +376,16 @@
                             "key_code": "right_option"
                         }
                     ]
+                },
+                {
+                    "from": {
+                        "apple_vendor_top_case_key_code": "keyboard_fn"
+                    },
+                    "to": [
+                        {
+                            "apple_vendor_top_case_key_code": "keyboard_fn"
+                        }
+                    ]
                 }
             ],
             "virtual_hid_keyboard": {
