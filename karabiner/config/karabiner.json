@@ -17,20 +17,24 @@
         },
         "rules": [
           {
-            "description": "Hyper + f to toogle fullscreen",
+            "description": "Change caps_lock key to command+control+option+shift. (Post escape key when pressed alone)",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "f",
+                  "key_code": "caps_lock",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
                     "optional": ["any"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "f",
-                    "modifiers": ["left_command", "left_control"]
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
                   }
                 ],
                 "type": "basic"
@@ -103,24 +107,89 @@
             ]
           },
           {
-            "description": "Change caps_lock key to command+control+option+shift. (Post escape key when pressed alone)",
+            "description": "Hyper + f to toogle fullscreen",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "caps_lock",
+                  "key_code": "f",
                   "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
                     "optional": ["any"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
-                    "modifiers": ["left_command", "left_control", "left_option"]
+                    "key_code": "f",
+                    "modifiers": ["left_command", "left_control"]
                   }
                 ],
-                "to_if_alone": [
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper + (d,u,w,c) to Control + (d,u,w,c)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
                   {
-                    "key_code": "escape"
+                    "key_code": "d",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "w",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["left_control"]
                   }
                 ],
                 "type": "basic"
