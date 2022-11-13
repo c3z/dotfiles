@@ -3,4 +3,4 @@ if test ! "$(uname)" = "Darwin"
   exit 0
 fi
 
-brew install "neovim"
+brew install --cask "karabiner-elements"

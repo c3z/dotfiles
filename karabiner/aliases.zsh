@@ -3,19 +3,19 @@ if test ! "$(uname)" = "Darwin"
   exit 0
 fi
 
-local karabiner_config_local="$HOME/.config/karabiner"
-local karabiner_config_repo="$HOME/.dotfiles/karabiner/config"
+local nvim_config_local="$HOME/.config/nvim"
+local nvim_config_repo="$HOME/.dotfiles/nvim/config"
 
-karsync_upload() {
-  echo "Coping local karabiner config to .dotfiles repo"
-  rsync -ravz --delete "$karabiner_config_local/" "$karabiner_config_repo"
+nvimsync_upload() {
+  echo "Coping local nvim config to .dotfiles repo"
+  rsync -ravz --delete "$nvim_config_local/" "$nvim_config_repo"
 }
 
-karsync_download() {
-  echo "Coping karabiner config from github repo to local config"
+nvimsync_download() {
+  echo "Coping nvim config from github repo to local config"
   local curent_path=$(pwd)
   cd $HOME/.dotfiles
   git pull
-  rsync -ravz --delete "$karabiner_config_repo/" "$karabiner_config_local" 
+  rsync -ravz --delete "$nvim_config_repo/" "$nvim_config_local" 
   cd $curent_path
 }
