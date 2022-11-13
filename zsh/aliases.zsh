@@ -10,4 +10,5 @@ alias gosleep='pmset sleepnow'
 
 alias ws='open -na "WebStorm.app" --args "$@"'
 alias pc='open -na "PyCharm.app" --args "$@"'
+alias vim='nvim "$@"'
 
