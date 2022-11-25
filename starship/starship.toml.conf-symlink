@@ -1,0 +1,7 @@
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[git_metrics]
+added_style = "bold blue"
+format = "[+$added]($added_style)/[-$deleted]($deleted_style) "
