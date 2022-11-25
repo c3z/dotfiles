@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications'
+
 
 tap "hashicorp/tap"
 tap "homebrew/bundle"
@@ -79,6 +79,7 @@ cask "font-inconsolata"
 cask "google-chrome"
 cask "handbrake"
 cask "iterm2"
+cask "karabiner-elements"
 cask "keepassxc"
 cask "keka"
 cask "macfuse"
