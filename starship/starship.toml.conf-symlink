@@ -52,11 +52,6 @@ trim_at = "-"
 style = "bold dimmed white"
 disabled = true
 
-[julia]
-format = "[$symbol$version]($style) "
-symbol = "ஃ "
-style = "bold green"
-
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
@@ -78,7 +73,7 @@ style = "bold green"
 time_format = "%T"
 format = "🕙 $time($style) "
 style = "bright-white"
-disabled = false
+disabled = true
 
 [username]
 style_user = "bold dimmed blue"
