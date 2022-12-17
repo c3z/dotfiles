@@ -197,6 +197,33 @@
             ]
           },
           {
+            "description": "iTerm modifications and shortcuts",
+            "manipulators": [
+              {
+                "description": "Cmd+p to Ctrl+p",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["com.googlecode.iterm2"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Run applications using hyper+letter",
             "manipulators": [
               {
