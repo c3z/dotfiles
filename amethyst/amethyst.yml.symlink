@@ -85,18 +85,6 @@ throw-space-6:
   mod: mod1
   key: del
 
-tall:
-  mod: mod1
-  key: 'left'
-
-wide:
-  mod: mod1
-  key: 'down'
-
-two-pane:
-  mod: mod1
-  key: 'up'
-
 select-tall-layout:
   mod: mod1
   key: up
@@ -107,11 +95,11 @@ select-wide-layout:
 
 select-column-laypout:
   mod: mod1
-  key: right
+  key: left
 
-# select-twopane-layout:
-#   mod: mod1
-#   key: right
+select-two-pane-layout:
+  mod: mod1
+  key: right
 
 select-fullscreen-layout:
   mod: mod1
