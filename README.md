@@ -75,6 +75,7 @@ rbenv global 3.3.0
 script/install
 
 ```
+
 ## TODO
 
 [ ] add full install from here: https://towardsdatascience.com/new-m1-who-dis-677e085baffd
@@ -92,3 +93,45 @@ fig
 curlx
 grv
 
+## Installing tensorflow on m1
+
+```sh
+conda create -n tf python=3.9
+conda activate tf
+
+# Install apple tensorflow dependencies
+conda install -c apple tensorflow-deps
+
+# Install tensorflow macos
+python -m pip install tensorflow-macos==2.9
+
+# Install tensorflow metal plugin
+python -m pip install tensorflow-metal==0.5.0
+
+# Install tensorflow readymade datasets
+python -m pip install tensorflow-datasets
+
+# Install libjpeg (needed by mathplotlib)
+brew install libjpeg
+
+# Install mathplotlib and jupyterlab
+conda install -y matplotlib jupyterlab
+```
+
+Verify using this script
+
+```py
+import tensorflow as tf
+
+cifar = tf.keras.datasets.cifar100
+(x_train, y_train), (x_test, y_test) = cifar.load_data()
+model = tf.keras.applications.ResNet50(
+    include_top=True,
+    weights=None,
+    input_shape=(32, 32, 3),
+    classes=100,)
+
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+model.compile(optimizer="adam", loss=loss_fn, metrics=["accuracy"])
+model.fit(x_train, y_train, epochs=5, batch_size=64)
+```
