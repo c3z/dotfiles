@@ -274,7 +274,7 @@
               {
                 "description": "hyper + f9 = roam",
                 "from": {
-                  "key_code": "f9",
+                  "key_code": "y",
                   "modifiers": {
                     "mandatory": ["left_command", "left_control", "left_shift", "left_option"]
                   }
