@@ -27,12 +27,10 @@ mod2:
   - control
   - command
 
-# Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
   mod: mod2
   key: v
 
-# Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 expand-main:
   mod: mod2
   key: b
@@ -61,30 +59,6 @@ swap-cw:
   mod: mod1
   key: k
 
-throw-space-1:
-  mod: mod1
-  key: 8
-
-throw-space-2:
-  mod: mod1
-  key: 9
-
-throw-space-3:
-  mod: mod1
-  key: 0
-
-throw-space-4:
-  mod: mod1
-  key: '-'
-
-throw-space-5:
-  mod: mod1
-  key: '='
-
-throw-space-6:
-  mod: mod1
-  key: del
-
 select-tall-layout:
   mod: mod1
   key: up
@@ -93,7 +67,7 @@ select-wide-layout:
   mod: mod1
   key: down
 
-select-column-laypout:
+select-column-layout:
   mod: mod1
   key: left
 
@@ -111,3 +85,103 @@ focus-follows-mouse: false
 window-margins: true
 window-margin-size: 2
 #https://github.com/ianyh/Amethyst/blob/35e05fa9e926c768a3fbc6c38d31f35b1664f6cd/Amethyst/default.amethyst
+
+cycle-layout:
+  mod: mod1
+  key: p
+cycle-layout-backward:
+  mod: mod1
+  key: p
+focus-screen-ccw:
+  mod: mod1
+  key: p
+focus-screen-cw:
+  mod: mod1
+  key: p
+focus-screen-1:
+  mod: mod1
+  key: p
+focus-screen-2:
+  mod: mod1
+  key: p
+focus-screen-3:
+  mod: mod1
+  key: p
+focus-screen-4:
+  mod: mod1
+  key: p
+throw-screen-1:
+  mod: mod1
+  key: p
+throw-screen-2:
+  mod: mod1
+  key: p
+throw-screen-3:
+  mod: mod1
+  key: p
+throw-screen-4:
+  mod: mod1
+  key: p
+increase-main:
+  mod: mod1
+  key: p
+decrease-main:
+  mod: mod1
+  key: p
+focus-main:
+  mod: mod1
+  key: m
+swap-screen-ccw:
+  mod: mod1
+  key: h
+swap-screen-cw:
+  mod: mod1
+  key: l
+throw-space-1:
+  mod: mod1
+  key: 8
+throw-space-2:
+  mod: mod1
+  key: 9
+throw-space-3:
+  mod: mod1
+  key: 0
+throw-space-4:
+  mod: mod1
+  key: '-'
+throw-space-5:
+  mod: mod1
+  key: '='
+throw-space-6:
+  mod: mod1
+  key: p
+throw-space-7:
+  mod: mod1
+  key: p
+throw-space-8:
+  mod: mod1
+  key: p
+throw-space-9:
+  mod: mod1
+  key: p
+throw-space-left:
+  mod: mod1
+  key: p
+throw-space-right:
+  mod: mod1
+  key: p
+toggle-float:
+  mod: mod1
+  key: p
+toggle-tiling:
+  mod: mod1
+  key: p
+display-current-layout:
+  mod: mod1
+  key: i
+reevaluate-windows:
+  mod: mod1
+  key: p
+toggle-focus-follows-mouse:
+  mod: mod1
+  key: p
