@@ -86,6 +86,36 @@ window-margins: true
 window-margin-size: 2
 #https://github.com/ianyh/Amethyst/blob/35e05fa9e926c768a3fbc6c38d31f35b1664f6cd/Amethyst/default.amethyst
 
+throw-space-1:
+  mod: mod1
+  key: '8'
+
+throw-space-2:
+  mod: mod1
+  key: '9'
+
+throw-space-3:
+  mod: mod1
+  key: '0'
+
+throw-space-4:
+  mod: mod1
+  key: '-'
+throw-space-5:
+  mod: mod1
+  key: '='
+throw-space-6:
+  mod: mod1
+  key: p
+throw-space-7:
+  mod: mod1
+  key: p
+throw-space-8:
+  mod: mod1
+  key: p
+throw-space-9:
+  mod: mod1
+  key: p
 cycle-layout:
   mod: mod1
   key: p
@@ -137,33 +167,6 @@ swap-screen-ccw:
 swap-screen-cw:
   mod: mod1
   key: l
-throw-space-1:
-  mod: mod1
-  key: 8
-throw-space-2:
-  mod: mod1
-  key: 9
-throw-space-3:
-  mod: mod1
-  key: 0
-throw-space-4:
-  mod: mod1
-  key: '-'
-throw-space-5:
-  mod: mod1
-  key: '='
-throw-space-6:
-  mod: mod1
-  key: p
-throw-space-7:
-  mod: mod1
-  key: p
-throw-space-8:
-  mod: mod1
-  key: p
-throw-space-9:
-  mod: mod1
-  key: p
 throw-space-left:
   mod: mod1
   key: p
