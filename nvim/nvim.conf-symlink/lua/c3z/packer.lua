@@ -24,7 +24,7 @@ packer.startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'ThePrimeagen/vim-be-good'
-
+  use 'christoomey/vim-tmux-navigator'
   use "daschw/leaf.nvim"
   end
   )
