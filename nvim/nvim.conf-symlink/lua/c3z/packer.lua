@@ -26,5 +26,13 @@ packer.startup(function()
   use 'ThePrimeagen/vim-be-good'
   use 'christoomey/vim-tmux-navigator'
   use "daschw/leaf.nvim"
+  use 'vim-test/vim-test'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use 'terrortylor/nvim-comment'
+
   end
   )
