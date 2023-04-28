@@ -107,7 +107,7 @@
             ]
           },
           {
-            "description": "Hyper + (d,u,w,c) to Control + (d,u,w,c)",
+            "description": "Hyper + (d,u,w,c,s) to Control + (d,u,w,c,s)",
             "manipulators": [
               {
                 "from": {
@@ -168,6 +168,22 @@
                 "to": [
                   {
                     "key_code": "c",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift", "left_control", "left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "s",
                     "modifiers": ["left_control"]
                   }
                 ],
