@@ -1,0 +1,4 @@
+[init]
+virtualenvs-create = true
+virtualenvs-in-project = true
+
