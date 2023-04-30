@@ -23,7 +23,10 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
   use 'ThePrimeagen/vim-be-good'
+  use 'ThePrimeagen/harpoon'
+
   use 'christoomey/vim-tmux-navigator'
   use "daschw/leaf.nvim"
   use 'vim-test/vim-test'
