@@ -91,7 +91,7 @@
       ['<C-k>'] = cmp.mapping.scroll_docs(-4),
       ['<C-j>'] = cmp.mapping.scroll_docs(4),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ["<Tab>"] = cmp.mapping(function(fallback)
+      ["<C-Space>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
           cmp.select_next_item()
         elseif vim.fn["vsnip#available"](1) == 1 then
@@ -102,7 +102,7 @@
           fallback()
         end
       end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function()
+      ["<S-C-Space>"] = cmp.mapping(function()
         if cmp.visible() then
           cmp.select_prev_item()
         elseif vim.fn["vsnip#jumpable"](-1) == 1 then
