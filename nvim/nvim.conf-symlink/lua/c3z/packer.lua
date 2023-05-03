@@ -29,6 +29,14 @@ packer.startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+       'nvim-treesitter/nvim-treesitter',
+       run = function()
+           local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+           ts_update()
+       end,
+   }
+
   use 'ThePrimeagen/vim-be-good'
   use 'ThePrimeagen/harpoon'
 
