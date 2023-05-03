@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+# Ensure the correct number of arguments is provided
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <source_directory> <destination_directory>"
+  exit 1
+fi
+
+# Assign the source and destination directories
+src_dir="$1"
+dst_dir="$2"
+
+# Check if the source and destination directories exist
+if [ ! -d "$src_dir" ]; then
+  echo "Error: Source directory does not exist."
+  exit 1
+fi
+
+if [ ! -d "$dst_dir" ]; then
+  echo "Error: Destination directory does not exist."
+  exit 1
+fi
+
+# Recursively copy files from the source to the destination directory, flattening the structure
+function flatten_files() {
+  local src="$1"
+  local dst="$2"
+
+  for file in "$src"/*; do
+    if [ -d "$file" ]; then
+      # If the file is a directory, recurse into it
+      flatten_files "$file" "$dst"
+    elif [ -f "$file" ]; then
+      # If the file is a regular file, copy it to the destination directory
+      cp "$file" "$dst"
+    fi
+  done
+}
+
+# Call the function to start the file copying process
+flatten_files "$src_dir" "$dst_dir"
+
