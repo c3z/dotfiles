@@ -4,4 +4,6 @@ vim.opt.background = "dark"
 
 -- vim.cmd("colorscheme tokyonight")
 -- vim.cmd("colorscheme leaf")
-vim.cmd("colorscheme leaf")
+-- vim.cmd("colorscheme leaf")
+vim.cmd("colorscheme catppuccin")
+

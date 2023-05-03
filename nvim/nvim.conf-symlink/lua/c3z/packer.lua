@@ -20,6 +20,8 @@ packer.startup(function()
 
   use 'folke/tokyonight.nvim'
   use "daschw/leaf.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use "xiyaowong/transparent.nvim"
 
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use {
