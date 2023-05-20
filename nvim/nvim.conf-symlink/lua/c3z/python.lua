@@ -26,9 +26,9 @@
     })
 
      vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
     signs = true,
-    underline = false,
+    underline = true,
     update_in_insert = false,
     float = {border = "rounded"},
     severity_sort = false,
