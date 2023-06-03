@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 function clone_if_not_exists() {
   local repo_url="https://github.com/tmux-plugins/tpm"
   local target_dir="${HOME}/.tmux/plugins/tpm"
