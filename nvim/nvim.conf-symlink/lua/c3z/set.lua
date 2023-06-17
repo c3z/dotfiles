@@ -15,3 +15,6 @@ vim.opt.wrap = false
 vim.g.mapleader = " "
 
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+
+vim.api.nvim_set_option("clipboard","unnamed")
+
