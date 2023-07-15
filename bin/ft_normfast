@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# Ensure the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <file_to_convert>"
+  exit 1 
+fi
+
+
+local filter="[0:a]   volume=30dB    [tmp1]; \
+              [tmp1]  dynaudnorm     [tmp2]; \
+              [tmp2]  atempo=2.0     [outa]"
+
+local inputfile="$(ls -d1 "${1}")"
+local outputfile="${inputfile%.*}_out.mp3"
+
+ffmpeg -i "${inputfile}" \
+  -codec:a libmp3lame \
+  -qscale:a 2 \
+  -ac 1 \
+  -filter_complex "${filter}" \
+  -map "[outa]" \
+  "${outputfile}" \
+  -y
+  
+ 
