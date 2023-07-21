@@ -1,0 +1,17 @@
+#!/bin/zsh
+echo "$#"
+
+# Ensure the correct number of arguments is provided
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 <spec> <dir> <mask>"
+  exit 1 
+fi
+
+local spec="${1}"
+local dir="${2}"
+local mask="${3}"
+
+for f in $(find ${dir} -iname "${mask}"); do
+  echo "Converting ${f}"
+  ft_convert ${spec} ${f}
+done

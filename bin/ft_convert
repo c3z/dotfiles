@@ -1,17 +1,17 @@
 #!/bin/zsh
 
 # Ensure the correct number of arguments is provided
-if [ "$#" -ne 1 ]; then
-  echo "Usage: $0 <file_to_convert>"
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <spec> <file_to_convert>"
   exit 1 
 fi
 
+local spec="${1}"
 
-local filter="[0:a]   volume=30dB    [tmp1]; \
-              [tmp1]  dynaudnorm     [outa];"
-
-local inputfile="$(ls -d1 "${1}")"
+local inputfile="$(ls -d1 "${2}")"
 local outputfile="${inputfile%.*}_out.mp3"
+
+local filter=$(ft_get_filter_spec "${spec}")
 
 ffmpeg -i "${inputfile}" \
   -codec:a libmp3lame \

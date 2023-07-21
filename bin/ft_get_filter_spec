@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+function usage {
+  echo "Usage: $0 norm | normfast"
+  exit 1
+}
+
+# Ensure the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+  usage
+  exit 1 
+fi
+
+local normfast="[0:a]   volume=30dB    [tmp1]; \
+                [tmp1]  dynaudnorm     [outa];"
+
+
+local norm="[0:a]   volume=30dB    [tmp1]; \
+              [tmp1]  dynaudnorm     [outa];"
+
+case $1 in
+  norm)
+    filter=$norm
+    ;;
+  normfast)
+    filter=$normfast
+    ;;
+  *)
+    echo "Usage: $0 norm | normfast"
+    exit 1
+    ;;
+esac
+
+echo $filter
+
