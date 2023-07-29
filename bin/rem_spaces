@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Function to list files with spaces
+list_files() {
+  files=$(find . -type f -name "* *" -print)
+  if [[ -z "$files" ]]; then
+    echo "There are no files with spaces"
+    return 1
+  else
+    echo "Listing all files with spaces in their names:"
+    echo "$files"
+    return 0
+  fi
+}
+
+# Function to rename files with spaces
+rename_files() {
+  echo "Renaming files..."
+  find . -type f -name "* *" -print0 | while IFS= read -r -d '' file; do
+    new_file="${file// /_}"
+    if [ -e "$new_file" ]; then
+      echo "Cannot rename '$file' to '$new_file': '$new_file' already exists." >&2
+    else
+      mv -- "$file" "$new_file" && echo "Renamed '$file' to '$new_file'"
+    fi
+  done
+}
+
+# Script introduction
+echo "This script checks spaces in files and dirs and replaces them to _"
+echo ""
+
+
+# Main script execution
+if list_files; then
+  read -p "Do you want to continue and rename these files? (yes/no): " answer
+
+  case $answer in
+    [yY] | [yY][eE][sS])
+      rename_files
+      ;;
+    *)
+      echo "Operation cancelled by the user."
+      ;;
+  esac
+else
+  echo "No files to rename. Exiting..."
+fi
+
