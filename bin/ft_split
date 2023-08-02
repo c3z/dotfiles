@@ -1,0 +1,64 @@
+#!/bin/zsh
+
+# default values for chunk size and overlap
+size=30
+overlap=5
+
+# function to print usage of the script
+function usage {
+    echo "Usage: $0 filename [-s|--size chunk_size] [-o|--overlap overlap_duration]"
+    exit 1
+}
+
+# check if no parameters are provided
+if [ $# -eq 0 ]; then
+    usage
+fi
+
+# parse parameters
+while (( $# )); do
+    case "$1" in
+        -s|--size)
+            shift
+            size="$1"
+            ;;
+        -o|--overlap)
+            shift
+            overlap="$1"
+            ;;
+        *)
+            filename="$1"
+            ;;
+    esac
+    shift
+done
+
+# check if filename is provided
+if [ -z "$filename" ]; then
+    usage
+fi
+
+# convert chunk size and overlap duration to seconds for ffmpeg
+size_seconds=$(($size * 60))
+overlap_seconds=$(($overlap * 60))
+
+# fetch duration of the audio file
+duration=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$filename")
+duration=${duration%.*}
+
+# create mp3 chunks using ffmpeg
+i=1
+start=0
+end=$size_seconds
+
+while [ $start -lt $duration ]; do
+    # create output filename with padded zeros
+    output_filename=$(printf "%s_%03d.mp3" "${filename%.*}" "$i")
+
+    ffmpeg -i "$filename" -acodec libmp3lame -ss "$start" -to "$end" "$output_filename"
+    start=$(($end - $overlap_seconds))
+    end=$(($start + $size_seconds))
+
+    i=$(($i + 1))
+done
+
