@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Please provide a directory."
+  exit 1
+fi
+
+if [ ! -d "$1" ]; then
+  echo "The provided path is not a directory."
+  exit 1
+fi
+
+directory="$1"
+creation_date=$(stat -f "%Sm" -t "%Y%m%d%H%M.%S" "$directory")
+
+echo "Setting file dates in directory $directory to $creation_date"
+
+find "$directory" -type f -exec touch -t "$creation_date" {} \;
+
+echo "Dates have been set successfully."
+
