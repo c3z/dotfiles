@@ -55,7 +55,7 @@ while [ $start -lt $duration ]; do
     # create output filename with padded zeros
     output_filename=$(printf "%s_%03d.mp3" "${filename%.*}" "$i")
 
-    ffmpeg -i "$filename" -acodec libmp3lame -ss "$start" -to "$end" "$output_filename"
+    ffmpeg -i "$filename" -acodec libmp3lame -ss "$start" -to "$end" "$output_filename" -y
     start=$(($end - $overlap_seconds))
     end=$(($start + $size_seconds))
 
