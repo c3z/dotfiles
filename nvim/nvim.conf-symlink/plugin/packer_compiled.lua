@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/c3z/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["format-on-save.nvim"] = {
+    loaded = true,
+    path = "/Users/c3z/.local/share/nvim/site/pack/packer/start/format-on-save.nvim",
+    url = "https://github.com/elentok/format-on-save.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/c3z/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -128,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/c3z/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/Users/c3z/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   neogit = {
     loaded = true,

@@ -60,6 +60,8 @@ packer.startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  use 'sbdchd/neoformat'
+  use 'elentok/format-on-save.nvim'
   use 'github/copilot.vim'
   end
   )
