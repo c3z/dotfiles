@@ -27,7 +27,18 @@ packer.startup(function()
     use({
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = { { "nvim-lua/plenary.nvim" } },
+        requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+        config = function()
+            require("telescope").load_extension("mapper")
+        end,
+    })
+
+    use({
+        "lazytanuki/nvim-mapper",
+        config = function()
+            require("nvim-mapper").setup({})
+        end,
+        before = "telescope.nvim",
     })
 
     use({
@@ -35,6 +46,26 @@ packer.startup(function()
         run = function()
             local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
             ts_update()
+        end,
+    })
+
+    use({
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup({
+                plugins = {
+                    spelling = {
+                        enabled = true,
+                    },
+                },
+                show_help = true,
+                layout = {
+                    height = { min = 6, max = 25 }, -- min and max height of the columns
+                    width = { min = 20, max = 150 }, -- min and max width of the columns
+                    spacing = 3,      -- spacing between columns
+                    align = "left",   -- align columns left, center or right
+                },
+            })
         end,
     })
 
