@@ -4,6 +4,6 @@ require("mason-lspconfig").setup({
     ensure_installed = { "lua_ls", "pyright" },
 })
 
-require("lspconfig").lua_ls.setup({ Lua = { diagnostics = { globals = { "vim" } } } })
+require("lspconfig").lua_ls.setup({settings={ Lua = { diagnostics = { globals = { "vim" } }} } })
 require("lspconfig").pyright.setup({ filetypes = { "python", "py" } })
 require("lspconfig").tsserver.setup({})
