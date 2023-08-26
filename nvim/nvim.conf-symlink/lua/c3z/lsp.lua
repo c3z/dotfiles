@@ -1,8 +1,6 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "pyright" },
-})
 
-require("lspconfig").lua_ls.setup({})
-require("lspconfig").pyright.setup({ filetypes = { "python", "py" } })
-require("lspconfig").tsserver.setup({})
+local nnoremap = require("c3z.keymap").nnoremap
+
+nnoremap("K", vim.lsp.buf.hover)
+nnoremap("<leader>gd", vim.lsp.buf.definition)
+nnoremap("<leader>gi", vim.lsp.buf.implementation)
