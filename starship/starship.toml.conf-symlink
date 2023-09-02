@@ -66,3 +66,6 @@ show_always = false
 
 [nodejs]
 format = "via [🤖 $version](bold green) "
+
+[battery]
+disabled = true
