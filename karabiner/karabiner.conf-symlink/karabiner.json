@@ -16,31 +16,27 @@
           "mouse_motion_to_scroll.speed": 100
         },
         "rules": [
+          {
+            "description": "Disable COMMAND + TAB",
+            "manipulators": [
               {
-                "description": "Disable COMMAND + TAB",
-                "manipulators": [
+                "type": "basic",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": ["command"]
+                  }
+                },
+                "to": [],
+                "conditions": [
                   {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "tab",
-                      "modifiers": {
-                        "mandatory": [
-                          "command"
-                        ]
-                      }
-                    },
-                    "to": [],
-                    "conditions": [
-                      {
-                        "type": "frontmost_application_unless",
-                        "bundle_identifiers": [
-                          "^com\\.apple\\.finder$"
-                        ]
-                      }
-                    ]
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": ["^com\\.apple\\.finder$"]
                   }
                 ]
-              },
+              }
+            ]
+          },
 
           {
             "description": "Change caps_lock key to command+control+option+shift. (Post escape key when pressed alone)",
@@ -374,6 +370,26 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Discord'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "hyper + F4 = whatsup",
+                "from": {
+                  "key_code": "f4",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'WhatsApp'"
                   }
                 ],
                 "type": "basic"
