@@ -26,7 +26,6 @@ packer.startup(function()
     use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
     use({
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.0",
         requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
         config = function()
             require("telescope").load_extension("mapper")
