@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+# Default parameters
+spec="" # curently not used
+dir="."
+mask="*_out.mp3"
+
+# Parse arguments using flags
+zparseopts -D -E -- \
+  spec:=spec_arg \
+  dir:=dir_arg \
+  mask:=mask_arg
+
+if [[ -n "${spec_arg[2]}" ]]; then
+  spec="${spec_arg[2]}"
+fi
+
+if [[ -n "${dir_arg[2]}" ]]; then
+  dir="${dir_arg[2]}"
+fi
+
+if [[ -n "${mask_arg[2]}" ]]; then
+  mask="${mask_arg[2]}"
+fi
+
+# Find files at first level of specified directory matching the mask
+files=("${(@f)$(find $dir -maxdepth 1 -iname $mask)}")
+
+# Print list of files found
+for f in $files; do
+  echo $f
+done
+
+# Prompt user for confirmation to proceed
+read "response?Continue with processing files? (y/n): "
+if [[ "$response" =~ ^[Yy]$ ]]; then
+  for f in $files; do
+    echo "...Processing file... $f"
+    ft_split $f
+  done
+fi
+
+
