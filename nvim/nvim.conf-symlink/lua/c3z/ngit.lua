@@ -1,11 +1,10 @@
+local M = require("c3z.util-map")
+local opts = { noremap = true, silent = true }
 local neogit = require('neogit')
-local nnoremap = require('c3z.keymap').nnoremap
 
 neogit.setup {}
 
-nnoremap("<leader>gs", function()
-    neogit.open({ })
-end);
+M.map("n","<leader>gs", "<cmd>lua require('neogit').open({})<CR>",opts,"Git","GitStatus","Neogit status")
 
-nnoremap("<leader>ga", "<cmd>!git fetch --all<CR>");
+M.map("n","<leader>ga", "<cmd>!git fetch --all<CR>",opts,"Git","GitFetchAll","Git fetch all");
 
