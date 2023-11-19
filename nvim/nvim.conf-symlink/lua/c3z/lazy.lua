@@ -12,9 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- add also lsp plugins to lazy 
-require("lazy").setup({ { import = "c3z.plugins" } }, {
+require("lazy").setup({ { import = "c3z.plugins" }, { import = "c3z.plugins.lsp" } }, {
   install = {
-    colorscheme = { "tokyonight" },
+ 
+ colorscheme = { "catppuccin" },
+-- colorscheme = { "tokyonight" },
   },
   checker = {
     enabled = true,
@@ -25,11 +27,3 @@ require("lazy").setup({ { import = "c3z.plugins" } }, {
   },
 })
 
-
-
---require("c3z.packer")
---require("c3z.remap")
---require("c3z.ngit")
---require("c3z.tmuxnavigator")
---require("c3z.lsp")
---require("c3z.python")
