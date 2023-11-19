@@ -11,13 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- add also lsp plugins to lazy
 require("lazy").setup({ { import = "c3z.plugins" }, { import = "c3z.plugins.lsp" } }, {
-	install = {
+	--install = {
 
-		colorscheme = { "catppuccin" },
-		--colorscheme = { "tokyonight" },
-	},
+	--colorscheme = { "catppuccin" },
+	--colorscheme = { "tokyonight" },
+	--},
 	checker = {
 		enabled = true,
 		notify = false,
