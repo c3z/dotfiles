@@ -1,6 +1,28 @@
-require("c3z.packer")
-require("c3z.remap")
-require("c3z.ngit")
-require("c3z.tmuxnavigator")
-require("c3z.lsp")
-require("c3z.python")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- add also lsp plugins to lazy
+require("lazy").setup({ { import = "c3z.plugins" }, { import = "c3z.plugins.lsp" } }, {
+	install = {
+
+		colorscheme = { "catppuccin" },
+		--colorscheme = { "tokyonight" },
+	},
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
+})
