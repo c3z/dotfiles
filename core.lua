@@ -1,0 +1,2 @@
+print "from core.lua" 
+

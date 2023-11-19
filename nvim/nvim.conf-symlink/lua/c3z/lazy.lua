@@ -1,4 +1,3 @@
-require("c3z.set")
 require("c3z.packer")
 require("c3z.remap")
 require("c3z.ngit")
