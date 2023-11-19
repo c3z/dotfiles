@@ -4,7 +4,7 @@ return {
        "nvim-lua/plenary.nvim",
     },
 
-    config = function() 
+     config = function() 
         
         -- set keymaps
         local keymap = vim.keymap -- for conciseness

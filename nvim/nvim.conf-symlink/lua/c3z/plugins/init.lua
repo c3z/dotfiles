@@ -5,6 +5,7 @@ return {
     "daschw/leaf.nvim",
 
     "christoomey/vim-tmux-navigator", -- tmux & split window navigation
+    "ThePrimeagen/vim-be-good",
 
     "folke/tokyonight.nvim",
     { "catppuccin/nvim", as = "catppuccin" },

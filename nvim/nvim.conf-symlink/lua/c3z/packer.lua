@@ -6,19 +6,8 @@ packer.startup(function()
 
 
     use({
-        "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
         config = function()
-            require("telescope").load_extension("mapper")
         end,
-    })
-
-    use({
-        "lazytanuki/nvim-mapper",
-        config = function()
-            require("nvim-mapper").setup({})
-        end,
-        before = "telescope.nvim",
     })
 
     use({
@@ -29,28 +18,6 @@ packer.startup(function()
         end,
     })
 
-    use({
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup({
-                plugins = {
-                    spelling = {
-                        enabled = true,
-                    },
-                },
-                show_help = true,
-                layout = {
-                    height = { min = 6, max = 25 }, -- min and max height of the columns
-                    width = { min = 20, max = 150 }, -- min and max width of the columns
-                    spacing = 3,      -- spacing between columns
-                    align = "left",   -- align columns left, center or right
-                },
-            })
-        end,
-    })
-
-    use("ThePrimeagen/vim-be-good")
-    use("ThePrimeagen/harpoon")
 
     use("christoomey/vim-tmux-navigator")
     use("daschw/leaf.nvim")
@@ -60,7 +27,6 @@ packer.startup(function()
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     })
-    use("terrortylor/nvim-comment")
 
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
