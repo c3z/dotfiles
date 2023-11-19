@@ -5,4 +5,3 @@ require("c3z.ngit")
 require("c3z.tmuxnavigator")
 require("c3z.lsp")
 require("c3z.python")
-
