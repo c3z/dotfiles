@@ -1,15 +1,12 @@
 return {
-    "terrortylor/nvim-comment",
+	"terrortylor/nvim-comment",
 
-    config = function() 
-        
-        -- set keymaps
-        local keymap = vim.keymap -- for conciseness
-        
-        require('nvim_comment').setup() 
+	config = function()
+		-- set keymaps
+		local keymap = vim.keymap -- for conciseness
 
-        -- keymap.set("n","<leader>;t","<cmd>CommentToggle<CR>", { desc = "Toogle comment" } )
+		require("nvim_comment").setup()
 
-    end,
+		-- keymap.set("n","<leader>;t","<cmd>CommentToggle<CR>", { desc = "Toogle comment" } )
+	end,
 }
-
