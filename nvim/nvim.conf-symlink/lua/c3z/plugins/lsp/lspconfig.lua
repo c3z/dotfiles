@@ -94,6 +94,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure astro server
+		lspconfig["astro"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure svelte server
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,
