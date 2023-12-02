@@ -31,23 +31,24 @@ style = "bright-white"
 format = "$all_status$ahead_behind"
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = "<[$hostname]($style)>"
 trim_at = "-"
 style = "bold dimmed white"
-disabled = true
+disabled = false
+
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
 style = "bold dimmed white"
-disabled = false
+disabled = true
 
 [package]
 disabled = true
 
 [python]
-format = "[$symbol$version]($style) "
+format = "  [$symbol$version ($virtualenv)]($style)"
 style = "bold green"
 
 [rust]
@@ -68,4 +69,4 @@ show_always = false
 format = "via [🤖 $version](bold green) "
 
 [battery]
-disabled = true
+disabled = false
