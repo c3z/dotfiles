@@ -444,6 +444,26 @@
                 "type": "basic"
               },
               {
+                "description": "hyper + 9 = keymap",
+                "from": {
+                  "key_code": "9",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'KeyMapp'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
                 "description": "hyper + e = chrome",
                 "from": {
                   "key_code": "e",
