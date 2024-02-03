@@ -53,12 +53,17 @@ function zshaddhistory() {
 	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
 }
 
-
-
-
 eval $(thefuck --alias)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/sbin:$PATH"
+
+if sec ls | grep -q 'OPENAI_API_KEY'; then
+  export OPENAI_API_KEY=$(sec get OPENAI_API_KEY)
+  echo "OPENAI_API_KEY set successfully."
+else
+  # If not found, print 'not found'
+  echo "OPENAI_API_KEY not found."
+fi
