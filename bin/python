@@ -1,0 +1,6 @@
+#!/bin/zsh
+if [[ "$@" == "" ]]; then
+  /opt/homebrew/bin/python3.11
+else
+  /opt/homebrew/bin/python3.11 "$@"
+fi
