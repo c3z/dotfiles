@@ -1,8 +1,6 @@
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "puma/puma"
 tap "railwaycat/emacsmacport"
 
