@@ -13,3 +13,8 @@ then
     sudo npm install spoof -g
   fi
 fi
+
+if test ! $(which bun)
+then
+  curl -fsSL https://bun.sh/install | bash
+fi
