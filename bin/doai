@@ -1,0 +1,92 @@
+#!/bin/zsh
+
+# Function to print usage
+print_usage() {
+  echo "Usage: $0 [-h|--help] [-s]"
+  echo "-s: Select a file using standard input"
+  echo "Without -s, the script will read from selected file in current directory."
+}
+
+# Function to process the selected operation and action
+process_operation_and_action() {
+  local input="$1"
+  local original_filename="$2"
+  
+  # Generate a meaningful temporary filename if not provided
+  if [[ -z "$original_filename" ]]; then
+    original_filename="temp_input_$(date +%Y%m%d%H%M%S)"
+  fi
+
+  # Request user to select an operation
+  local aiop=$(fabric -l | fzf --prompt='Select an operation: ')
+
+  # Request user to select action using fzf
+  arr=("Edit" "Save" "Stdout")
+  action=$(printf "%s\n" "${arr[@]}" | fzf --bind=enter:accept-non-empty)
+  
+  # Process the input through the selected operation
+  if [[ -n $aiop ]]; then
+    local output=$(echo "$input" | fabric --pattern "$aiop")
+
+    case $action in
+      Edit) 
+        local timestamp=$(date +%Y%m%d%H%M%S)
+        local new_file="${original_filename%.*}_$timestamp.${original_filename##*.}"
+        echo "$output" > "$new_file"
+        echo "Editing: $new_file"
+        $EDITOR "$new_file"
+        ;;
+      Save) 
+        local timestamp=$(date +%Y%m%d%H%M%S)
+        local new_file="${original_filename%.*}_$timestamp.${original_filename##*.}"
+        echo "$output" > "$new_file"
+        echo "Saved: $new_file"
+        ;;
+      Stdout) 
+        echo "$output"
+        ;;
+      *)
+        echo "Invalid action. Please select 1, 2, or 3."
+        exit 1
+        ;;
+    esac
+  else
+    echo "Operation not selected. Exiting."
+    exit 1
+  fi
+}
+
+# Main script
+file_selection_required=true
+
+# Parse options
+while getopts ":hs" opt; do
+  case ${opt} in
+    h)
+      print_usage
+      exit 0
+      ;;
+    s)
+      file_selection_required=false
+      ;;
+    \?)
+      echo "Invalid option: $OPTARG" >&2
+      print_usage
+      exit 1
+      ;;
+  esac
+done
+
+if [[ $file_selection_required == true ]]; then
+  file=$(ls -t | fzf --prompt='Select a file: ')
+  if [[ -n $file ]]; then
+    input=$(cat "$file")
+    process_operation_and_action "$input" "$file"
+  else
+    echo "File selection cancelled."
+    exit 1
+  fi
+else
+  input=$(cat) # Read from standard input
+  process_operation_and_action "$input"
+fi

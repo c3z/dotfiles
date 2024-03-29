@@ -51,6 +51,7 @@ brew "tmux"
 brew "vips"
 brew "vifm"
 brew "wget"
+brew "yarn"
 brew "yt-dlp"
 
 cask "font-cascadia-code"
