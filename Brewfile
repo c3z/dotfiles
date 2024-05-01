@@ -6,6 +6,7 @@ tap "railwaycat/emacsmacport"
 
 brew "ack"
 brew "ansible"
+brew "borkdude/brew/babashka"
 brew "coreutils"
 brew "deno"
 brew "datasette"
