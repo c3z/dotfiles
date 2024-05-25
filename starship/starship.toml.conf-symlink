@@ -70,3 +70,6 @@ format = "via [🤖 $version](bold green) "
 
 [battery]
 disabled = false
+
+[line_break]
+disabled = true
