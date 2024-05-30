@@ -1,6 +1,3 @@
-if test ! "$(uname)" = "Darwin"
-  then
-  exit 0
+if is_mac; then
+  brew install --cask "amethyst"
 fi
-
-brew install --cask "amethyst"

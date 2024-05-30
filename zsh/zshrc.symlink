@@ -1,3 +1,21 @@
+# helper functions to check the OS inside the scripts
+function is_linux() {
+    if [[ "$(uname)" == "Linux" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+function is_mac() {
+    if [[ "$(uname)" == "Darwin" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+##
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 

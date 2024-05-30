@@ -1,6 +1,0 @@
-#!/bin/zsh
-if [[ "$@" == "" ]]; then
-  /opt/homebrew/bin/pip3.11
-else
-  /opt/homebrew/bin/pip3.11 "$@"
-fi
