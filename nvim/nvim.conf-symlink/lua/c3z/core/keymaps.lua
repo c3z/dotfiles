@@ -8,3 +8,5 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "clear search highlight" })
 
 keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover to buf" })
 keymap.set("n", "<leader>cr", "<cmd>luafile %<CR>", { desc = "Reload current lua file" })
+keymap.set("i", "<C-s>", "<C-o>:w<ENTER>", { desc = "Save file" })
+keymap.set("n", "<C-s>", ":w<ENTER>", { desc = "Save file" })

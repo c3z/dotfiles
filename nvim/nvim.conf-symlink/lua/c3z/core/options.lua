@@ -14,5 +14,4 @@ vim.opt.wrap = false
 
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
-vim.api.nvim_set_option("clipboard","unnamed")
-
+vim.api.nvim_set_option("clipboard", "unnamed")
