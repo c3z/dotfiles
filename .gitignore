@@ -2,3 +2,4 @@ git/gitconfig.local.symlink
 Brewfile.lock.json
 /karabiner/config/automatic_backups
 /nvim/nvim.conf-symlink/plugin/packer_compiled.lua
+nvim/nvim.conf-symlink/lazy-lock.json
