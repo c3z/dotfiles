@@ -141,4 +141,4 @@ local function setup_mar()
 	link("TelescopeNormal", "Normal")
 end
 
-setup_jb()
+setup_mar()
