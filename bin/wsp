@@ -1,0 +1,59 @@
+#!/usr/bin/env bun
+
+import axios from "axios";
+import FormData from "form-data";
+import fs from "fs";
+import path from "path";
+import { hideBin } from "yargs/helpers";
+import yargs from "yargs";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const argv = yargs(hideBin(process.argv))
+  .option("file", {
+    alias: "f",
+    type: "string",
+    description: "Path to the audio file",
+    demandOption: true,
+  })
+  .parse();
+
+const filePath = path.resolve(process.cwd(), argv.file);
+const apiKey = process.env.OPENAI_API_KEY;
+
+if (!apiKey) {
+  console.error("OPENAI_API_KEY environment variable is not set");
+  process.exit(1);
+}
+
+const transcribeAudio = async (filePath) => {
+  const fileStream = fs.createReadStream(filePath);
+  const form = new FormData();
+  form.append("file", fileStream);
+  form.append("model", "whisper-1");
+
+  axios.defaults.headers.common["Accept-Encoding"] = "gzip";
+  try {
+    const response = await axios.post(
+      "https://api.openai.com/v1/audio/transcriptions",
+      form,
+      {
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          ...form.getHeaders(),
+        },
+      },
+    );
+
+    if (response.status === 200) {
+      console.log(response.data.text);
+    } else {
+      console.error(`Failed to transcribe audio: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error transcribing audio:", error);
+  }
+};
+
+transcribeAudio(filePath);
