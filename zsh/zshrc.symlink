@@ -71,29 +71,6 @@ function zshaddhistory() {
 	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
 }
 
-eval $(thefuck --alias)
-
-# Read keys from file and assign to array
-keys=()
-while IFS= read -r line; do
-  keys+=("$line")
-done < ~/.zsh-envtoload
-
-# Print the keys array
-echo "${keys[@]}"
-
-for key in "${keys[@]}"; do
-  if sec ls | grep -q "$key"; then
-    export "$key"=$(sec get "$key")
-    echo "$key set successfully."
-  else
-    echo "$key not found."
-  fi
-done
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+########################
+# Console Ninja
 PATH=~/.console-ninja/.bin:$PATH
-if [ -f "/Users/c3z/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/c3z/.config/fabric/fabric-bootstrap.inc"; fi
