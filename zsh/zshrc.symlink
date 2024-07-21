@@ -74,3 +74,4 @@ function zshaddhistory() {
 ########################
 # Console Ninja
 PATH=~/.console-ninja/.bin:$PATH
+if [ -f "/Users/cez/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/cez/.config/fabric/fabric-bootstrap.inc"; fi
