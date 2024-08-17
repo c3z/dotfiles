@@ -31,7 +31,7 @@ set_secret() {
   if [[ -z "$1" ]] || [[ -z "$2" ]]; then
     print_usage
   fi
-  security add-generic-password -D secret -U -a $USER -s "$1" -w "$2" $KEYCHAIN
+  security add-generic-password -D secret -U -a $USER -s "$1" -w "$2" -T "" $KEYCHAIN 
 }
 
 delete_secret() {
