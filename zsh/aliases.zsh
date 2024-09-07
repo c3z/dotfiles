@@ -12,3 +12,5 @@ alias ws='open -na "WebStorm.app" --args "$@"'
 alias pc='open -na "PyCharm.app" --args "$@"'
 alias vim='nvim "$@"'
 
+alias set_code='karabiner_code_shortcut_switch code'
+alias set_cursor='karabiner_code_shortcut_switch cursor'

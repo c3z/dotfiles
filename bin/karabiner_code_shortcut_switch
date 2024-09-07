@@ -1,0 +1,106 @@
+#!/bin/zsh
+
+set -e  # Exit immediately if a command exits with a non-zero status.
+
+# Configuration
+CONFIG_FILE="${KARABINER_CONFIG:-$HOME/.config/karabiner/karabiner.json}"
+BACKUP_FILE="$CONFIG_FILE.backup"
+
+# Logging function
+log() {
+    echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1"
+}
+
+# Function to modify Karabiner configuration
+modify_karabiner_config() {
+    local app_name="$1"
+    local temp_file=$(mktemp)
+
+    # Input validation
+    if [[ -z "$app_name" || "$app_name" =~ [^a-zA-Z0-9\ ] ]]; then
+        log "Error: Invalid app name."
+        exit 1
+    fi
+
+    # Check if config file exists
+    if [[ ! -f "$CONFIG_FILE" ]]; then
+        log "Error: Karabiner configuration file not found at $CONFIG_FILE"
+        exit 1
+    fi
+
+    # Create a backup
+    cp "$CONFIG_FILE" "$BACKUP_FILE"
+    log "Backup created at $BACKUP_FILE"
+
+    # Modify the configuration
+    if ! jq --arg app "$app_name" '
+        .profiles[0].complex_modifications.rules |= 
+        map(if .description == "Run applications using hyper+letter" then
+            .manipulators |= map(if .description == "hyper + r = Visual Studio Code" or .description == "hyper + r = Cursor" then
+                {
+                    "description": "hyper + r = \($app)",
+                    "from": {
+                        "key_code": "r",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command",
+                                "left_control",
+                                "left_shift",
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                               "shell_command": "open -a '\''\($app)'\''"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            else . end)
+        else . end)
+    ' "$CONFIG_FILE" > "$temp_file"; then
+        log "Error: Failed to modify configuration."
+        exit 1
+    fi
+
+    # Validate the modified JSON
+    if ! jq empty "$temp_file" > /dev/null 2>&1; then
+        log "Error: Invalid JSON structure after modification."
+        exit 1
+    fi
+
+    # Apply the changes
+    mv "$temp_file" "$CONFIG_FILE"
+    log "Karabiner configuration updated to launch $app_name with hyper + r"
+}
+
+# Function to set Visual Studio Code
+set_code() {
+    modify_karabiner_config "Visual Studio Code"
+}
+
+# Function to set Cursor
+set_cursor() {
+    modify_karabiner_config "Cursor"
+}
+
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+    log "Error: jq is not installed. Please install it using 'brew install jq' or your preferred package manager."
+    exit 1
+fi
+
+# Usage
+case "$1" in
+    code)
+        set_code
+        ;;
+    cursor)
+        set_cursor
+        ;;
+    *)
+        echo "Usage: $0 {code|cursor}"
+        exit 1
+        ;;
+esac
