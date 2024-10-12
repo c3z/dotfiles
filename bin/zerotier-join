@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo zerotier-cli join 6ab565387a700e80
+sudo zerotier-cli join 9bee8941b5873d84
+sudo zerotier-cli join 35c192ce9b98c1dc
+sudo zerotier-cli join d5e5fb6537ab6738
+
