@@ -83,3 +83,6 @@ if [ -f "/Users/cez/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/cez/.
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/cez/.opam/opam-init/init.zsh' ]] || source '/Users/cez/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+#
+#
+export DOC_PATH=$HOME/c3z-brain/
