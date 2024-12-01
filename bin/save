@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# Define local save directory
+save_dir="/Users/cez/Desktop/c3z-brain/000_Inbox"
+
+# Get current date in YYYY-MM-DD format
+current_date=$(date +%Y-%m-%d)
+
+# Check if filename argument is provided
+if [[ $# -ne 1 ]]; then
+    echo "Usage: save filename" >&2
+    echo "Filename will be formatted as: $current_date-filename" >&2
+    exit 1
+fi
+
+# Convert spaces to underscores and remove special characters from input
+clean_name=$(echo "$1" | tr ' ' '_' | tr -cd '[:alnum:]_-')
+
+# Create final filename with date prefix
+final_filename="${current_date}-${clean_name}.md"
+
+# Check if directory is writable
+if [[ ! -w "$save_dir" ]]; then
+    echo "Error: Directory $save_dir is not writable" >&2
+    exit 1
+fi
+
+# Save stdin to file
+cat > "$save_dir/$final_filename"
+
+echo "File saved as: $final_filename"

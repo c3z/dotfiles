@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+local video_link="$1"
+fabric -y "$video_link" --transcript

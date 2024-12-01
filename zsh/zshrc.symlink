@@ -86,3 +86,7 @@ if [ -f "/Users/cez/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/cez/.
 #
 #
 export DOC_PATH=$HOME/c3z-brain/
+
+
+# fabric aliases
+fabric-add-aliases
